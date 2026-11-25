@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "naos": {
+      "type": "stdio",
+      "command": "node",
+      "args": ["--disable-warning=ExperimentalWarning", "${CLAUDE_PROJECT_DIR:-.}/packages/kernel/src/control/mcp-shim.ts"],
+      "alwaysLoad": true
+    }
+  }
+}

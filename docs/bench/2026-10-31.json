@@ -1,0 +1,1099 @@
+{
+  "date": "2026-10-31",
+  "caveat": "Headless Edge. rAF intervals here do not include a visible window's compositor and display path. Timer query numbers are GPU time and do not depend on that. Other builders were using the machine at the same time, so treat p99 and max as upper bounds.",
+  "panel": {
+    "viewport": "1280x800",
+    "dpr": 1.5,
+    "free": "748x720"
+  },
+  "spanMs": 4000,
+  "browser": "156.0.4314.50",
+  "renderer": "ANGLE (Intel, Intel(R) Arc(TM) Graphics (0x00007D55) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+  "timer": true,
+  "stageSeconds": {
+    "frames": 30,
+    "corona": 15,
+    "uncapped": 18,
+    "look": 26,
+    "auto": 6,
+    "loss": 7
+  },
+  "failures": [],
+  "frames": [
+    {
+      "scene": "S0",
+      "tier": "Umbra",
+      "tag": null,
+      "canvas": {
+        "width": 1122,
+        "height": 1080,
+        "dpr": 1.5,
+        "cssW": 748,
+        "cssH": 720
+      },
+      "rendered": 0,
+      "raf": {
+        "count": 0,
+        "mean": 0,
+        "p50": 0,
+        "p95": 0,
+        "p99": 0,
+        "max": 0
+      },
+      "gpu": {
+        "count": 0,
+        "mean": 0,
+        "p50": 0,
+        "p95": 0,
+        "p99": 0,
+        "max": 0
+      },
+      "gpuPre": {
+        "count": 0,
+        "mean": 0,
+        "p50": 0,
+        "p95": 0,
+        "p99": 0,
+        "max": 0
+      },
+      "gpuScene": {
+        "count": 0,
+        "mean": 0,
+        "p50": 0,
+        "p95": 0,
+        "p99": 0,
+        "max": 0
+      },
+      "gpuPost": {
+        "count": 0,
+        "mean": 0,
+        "p50": 0,
+        "p95": 0,
+        "p99": 0,
+        "max": 0
+      },
+      "cpu": {
+        "count": 0,
+        "mean": 0,
+        "p50": 0,
+        "p95": 0,
+        "p99": 0,
+        "max": 0
+      },
+      "disjoint": 0,
+      "calls": 0,
+      "triangles": 0,
+      "points": 0,
+      "spanMs": 4009.300000011921,
+      "sync": {
+        "one": {
+          "count": 40,
+          "mean": 3.17,
+          "p50": 3.2,
+          "p95": 3.7,
+          "p99": 4,
+          "max": 4
+        },
+        "ten": {
+          "count": 20,
+          "mean": 16.94,
+          "p50": 16.9,
+          "p95": 18.3,
+          "p99": 18.3,
+          "max": 18.3
+        }
+      }
+    },
+    {
+      "scene": "S20",
+      "tier": "Umbra",
+      "tag": null,
+      "canvas": {
+        "width": 1122,
+        "height": 1080,
+        "dpr": 1.5,
+        "cssW": 748,
+        "cssH": 720
+      },
+      "rendered": 124,
+      "raf": {
+        "count": 117,
+        "mean": 33.33,
+        "p50": 33.3,
+        "p95": 33.4,
+        "p99": 33.5,
+        "max": 33.6
+      },
+      "gpu": {
+        "count": 120,
+        "mean": 2.65,
+        "p50": 2.32,
+        "p95": 4.15,
+        "p99": 4.2,
+        "max": 4.23
+      },
+      "gpuPre": {
+        "count": 120,
+        "mean": 0.62,
+        "p50": 0.55,
+        "p95": 0.89,
+        "p99": 1.03,
+        "max": 2.11
+      },
+      "gpuScene": {
+        "count": 120,
+        "mean": 0.94,
+        "p50": 0.66,
+        "p95": 2.17,
+        "p99": 2.31,
+        "max": 2.33
+      },
+      "gpuPost": {
+        "count": 120,
+        "mean": 1.09,
+        "p50": 1.06,
+        "p95": 1.22,
+        "p99": 1.29,
+        "max": 1.52
+      },
+      "cpu": {
+        "count": 120,
+        "mean": 0.64,
+        "p50": 0.6,
+        "p95": 0.9,
+        "p99": 1.1,
+        "max": 1.2
+      },
+      "disjoint": 0,
+      "calls": 24,
+      "triangles": 6560,
+      "points": 2173,
+      "spanMs": 4018.5999999940395,
+      "sync": {
+        "one": {
+          "count": 40,
+          "mean": 3.61,
+          "p50": 3.6,
+          "p95": 4.5,
+          "p99": 4.6,
+          "max": 4.6
+        },
+        "ten": {
+          "count": 20,
+          "mean": 18.53,
+          "p50": 18.6,
+          "p95": 21.1,
+          "p99": 21.1,
+          "max": 21.1
+        }
+      }
+    },
+    {
+      "scene": "S20e",
+      "tier": "Umbra",
+      "tag": null,
+      "canvas": {
+        "width": 1122,
+        "height": 1080,
+        "dpr": 1.5,
+        "cssW": 748,
+        "cssH": 720
+      },
+      "rendered": 124,
+      "raf": {
+        "count": 237,
+        "mean": 16.67,
+        "p50": 16.7,
+        "p95": 16.8,
+        "p99": 16.8,
+        "max": 16.9
+      },
+      "gpu": {
+        "count": 120,
+        "mean": 2.74,
+        "p50": 2.55,
+        "p95": 4.11,
+        "p99": 4.58,
+        "max": 4.58
+      },
+      "gpuPre": {
+        "count": 120,
+        "mean": 0.82,
+        "p50": 0.76,
+        "p95": 1.05,
+        "p99": 1.13,
+        "max": 1.37
+      },
+      "gpuScene": {
+        "count": 120,
+        "mean": 0.82,
+        "p50": 0.66,
+        "p95": 2.08,
+        "p99": 2.31,
+        "max": 2.32
+      },
+      "gpuPost": {
+        "count": 120,
+        "mean": 1.11,
+        "p50": 1.08,
+        "p95": 1.23,
+        "p99": 1.36,
+        "max": 1.44
+      },
+      "cpu": {
+        "count": 120,
+        "mean": 0.7,
+        "p50": 0.7,
+        "p95": 0.9,
+        "p99": 1,
+        "max": 1.1
+      },
+      "disjoint": 0,
+      "calls": 27,
+      "triangles": 16800,
+      "points": 36803,
+      "spanMs": 4007.5999999940395,
+      "sync": {
+        "one": {
+          "count": 40,
+          "mean": 3.35,
+          "p50": 3.3,
+          "p95": 4,
+          "p99": 4.4,
+          "max": 4.4
+        },
+        "ten": {
+          "count": 20,
+          "mean": 16.12,
+          "p50": 17.4,
+          "p95": 20.9,
+          "p99": 20.9,
+          "max": 20.9
+        }
+      }
+    },
+    {
+      "scene": "S60",
+      "tier": "Umbra",
+      "tag": null,
+      "canvas": {
+        "width": 1122,
+        "height": 1080,
+        "dpr": 1.5,
+        "cssW": 748,
+        "cssH": 720
+      },
+      "rendered": 124,
+      "raf": {
+        "count": 117,
+        "mean": 33.33,
+        "p50": 33.3,
+        "p95": 33.4,
+        "p99": 33.5,
+        "max": 33.5
+      },
+      "gpu": {
+        "count": 120,
+        "mean": 3.84,
+        "p50": 3.76,
+        "p95": 5.44,
+        "p99": 5.56,
+        "max": 5.57
+      },
+      "gpuPre": {
+        "count": 120,
+        "mean": 0.65,
+        "p50": 0.57,
+        "p95": 0.88,
+        "p99": 0.93,
+        "max": 0.95
+      },
+      "gpuScene": {
+        "count": 120,
+        "mean": 2.08,
+        "p50": 1.89,
+        "p95": 3.46,
+        "p99": 3.57,
+        "max": 3.74
+      },
+      "gpuPost": {
+        "count": 120,
+        "mean": 1.11,
+        "p50": 1.08,
+        "p95": 1.21,
+        "p99": 1.29,
+        "max": 1.5
+      },
+      "cpu": {
+        "count": 120,
+        "mean": 0.69,
+        "p50": 0.7,
+        "p95": 1,
+        "p99": 1.1,
+        "max": 1.1
+      },
+      "disjoint": 0,
+      "calls": 24,
+      "triangles": 11632,
+      "points": 2173,
+      "spanMs": 4011.8999999910593,
+      "sync": {
+        "one": {
+          "count": 40,
+          "mean": 4.45,
+          "p50": 4.4,
+          "p95": 5.4,
+          "p99": 6.2,
+          "max": 6.2
+        },
+        "ten": {
+          "count": 20,
+          "mean": 21.05,
+          "p50": 18.6,
+          "p95": 30,
+          "p99": 30,
+          "max": 30
+        }
+      }
+    }
+  ],
+  "uncapped": [
+    {
+      "scene": "S20",
+      "tier": "Umbra",
+      "tag": "uncapped",
+      "canvas": {
+        "width": 1122,
+        "height": 1080,
+        "dpr": 1.5,
+        "cssW": 748,
+        "cssH": 720
+      },
+      "rendered": 4784,
+      "raf": {
+        "count": 4560,
+        "mean": 1.73,
+        "p50": 0.2,
+        "p95": 0.6,
+        "p99": 36,
+        "max": 936.8
+      },
+      "gpu": {
+        "count": 3349,
+        "mean": 1.15,
+        "p50": 1.02,
+        "p95": 2.1,
+        "p99": 2.93,
+        "max": 4.35
+      },
+      "gpuPre": {
+        "count": 3349,
+        "mean": 0,
+        "p50": 0,
+        "p95": 0,
+        "p99": 0.26,
+        "max": 1.15
+      },
+      "gpuScene": {
+        "count": 3349,
+        "mean": 0.44,
+        "p50": 0.37,
+        "p95": 0.66,
+        "p99": 2.04,
+        "max": 3.65
+      },
+      "gpuPost": {
+        "count": 3349,
+        "mean": 0.71,
+        "p50": 0.64,
+        "p95": 0.98,
+        "p99": 2.38,
+        "max": 3.72
+      },
+      "cpu": {
+        "count": 4504,
+        "mean": 0.78,
+        "p50": 0.1,
+        "p95": 0.3,
+        "p99": 0.9,
+        "max": 940.2
+      },
+      "disjoint": 0,
+      "calls": 24,
+      "triangles": 6560,
+      "points": 2173,
+      "spanMs": 4173.5999999940395,
+      "sync": null
+    },
+    {
+      "scene": "S20e",
+      "tier": "Umbra",
+      "tag": "uncapped",
+      "canvas": {
+        "width": 1122,
+        "height": 1080,
+        "dpr": 1.5,
+        "cssW": 748,
+        "cssH": 720
+      },
+      "rendered": 3961,
+      "raf": {
+        "count": 3515,
+        "mean": 2.65,
+        "p50": 0.2,
+        "p95": 0.6,
+        "p99": 16.1,
+        "max": 742.7
+      },
+      "gpu": {
+        "count": 3750,
+        "mean": 1.23,
+        "p50": 1.13,
+        "p95": 1.98,
+        "p99": 2.53,
+        "max": 3.4
+      },
+      "gpuPre": {
+        "count": 3750,
+        "mean": 0.14,
+        "p50": 0.12,
+        "p95": 0.15,
+        "p99": 1.07,
+        "max": 2.17
+      },
+      "gpuScene": {
+        "count": 3750,
+        "mean": 0.41,
+        "p50": 0.38,
+        "p95": 0.51,
+        "p99": 1.33,
+        "max": 2.41
+      },
+      "gpuPost": {
+        "count": 3750,
+        "mean": 0.67,
+        "p50": 0.62,
+        "p95": 0.88,
+        "p99": 1.91,
+        "max": 2.81
+      },
+      "cpu": {
+        "count": 3450,
+        "mean": 1.25,
+        "p50": 0.1,
+        "p95": 0.3,
+        "p99": 0.4,
+        "max": 736.1
+      },
+      "disjoint": 0,
+      "calls": 27,
+      "triangles": 16800,
+      "points": 36803,
+      "spanMs": 4660.399999991059,
+      "sync": null
+    }
+  ],
+  "corona": [
+    {
+      "scale": 0.5,
+      "scene": "S20",
+      "tier": "Umbra",
+      "tag": "corona0.5",
+      "canvas": {
+        "width": 1122,
+        "height": 1080,
+        "dpr": 1.5,
+        "cssW": 748,
+        "cssH": 720
+      },
+      "rendered": 123,
+      "raf": {
+        "count": 117,
+        "mean": 33.33,
+        "p50": 33.3,
+        "p95": 33.4,
+        "p99": 33.5,
+        "max": 33.5
+      },
+      "gpu": {
+        "count": 120,
+        "mean": 2.01,
+        "p50": 1.85,
+        "p95": 2.98,
+        "p99": 3.18,
+        "max": 3.19
+      },
+      "gpuPre": {
+        "count": 120,
+        "mean": 0.21,
+        "p50": 0.19,
+        "p95": 0.35,
+        "p99": 0.35,
+        "max": 0.79
+      },
+      "gpuScene": {
+        "count": 120,
+        "mean": 0.75,
+        "p50": 0.6,
+        "p95": 1.72,
+        "p99": 1.79,
+        "max": 1.81
+      },
+      "gpuPost": {
+        "count": 120,
+        "mean": 1.05,
+        "p50": 1.03,
+        "p95": 1.17,
+        "p99": 1.26,
+        "max": 1.29
+      },
+      "cpu": {
+        "count": 120,
+        "mean": 0.65,
+        "p50": 0.6,
+        "p95": 1,
+        "p99": 1.1,
+        "max": 2.2
+      },
+      "disjoint": 0,
+      "calls": 24,
+      "triangles": 6560,
+      "points": 2173,
+      "spanMs": 4000.7999999970198,
+      "sync": {
+        "one": {
+          "count": 40,
+          "mean": 3.18,
+          "p50": 3.3,
+          "p95": 3.6,
+          "p99": 4.1,
+          "max": 4.1
+        },
+        "ten": {
+          "count": 20,
+          "mean": 17.68,
+          "p50": 18,
+          "p95": 21.3,
+          "p99": 21.3,
+          "max": 21.3
+        }
+      }
+    },
+    {
+      "scale": 1,
+      "scene": "S20",
+      "tier": "Umbra",
+      "tag": "corona1",
+      "canvas": {
+        "width": 1122,
+        "height": 1080,
+        "dpr": 1.5,
+        "cssW": 748,
+        "cssH": 720
+      },
+      "rendered": 123,
+      "raf": {
+        "count": 117,
+        "mean": 33.33,
+        "p50": 33.3,
+        "p95": 33.4,
+        "p99": 33.5,
+        "max": 33.5
+      },
+      "gpu": {
+        "count": 120,
+        "mean": 2.46,
+        "p50": 2.22,
+        "p95": 3.75,
+        "p99": 4.08,
+        "max": 4.15
+      },
+      "gpuPre": {
+        "count": 120,
+        "mean": 0.6,
+        "p50": 0.55,
+        "p95": 0.85,
+        "p99": 0.97,
+        "max": 1.03
+      },
+      "gpuScene": {
+        "count": 120,
+        "mean": 0.85,
+        "p50": 0.65,
+        "p95": 2.06,
+        "p99": 2.25,
+        "max": 2.33
+      },
+      "gpuPost": {
+        "count": 120,
+        "mean": 1.01,
+        "p50": 1.01,
+        "p95": 1.12,
+        "p99": 1.16,
+        "max": 1.24
+      },
+      "cpu": {
+        "count": 120,
+        "mean": 0.64,
+        "p50": 0.6,
+        "p95": 0.9,
+        "p99": 1,
+        "max": 1
+      },
+      "disjoint": 0,
+      "calls": 24,
+      "triangles": 6560,
+      "points": 2173,
+      "spanMs": 4010,
+      "sync": {
+        "one": {
+          "count": 40,
+          "mean": 3.48,
+          "p50": 3.5,
+          "p95": 4.1,
+          "p99": 4.2,
+          "max": 4.2
+        },
+        "ten": {
+          "count": 20,
+          "mean": 18.01,
+          "p50": 18.1,
+          "p95": 20.7,
+          "p99": 20.7,
+          "max": 20.7
+        }
+      }
+    }
+  ],
+  "look": [
+    {
+      "name": "finish-umbra-6",
+      "q": "tier=Umbra&curve=finish&levels=6",
+      "gpuP50": 1.99,
+      "gpuPost": 1.06,
+      "discMaxChannel": 2,
+      "seam": {
+        "rail": [
+          6,
+          5,
+          4
+        ],
+        "canvas": [
+          6.3,
+          5.2,
+          4.2
+        ]
+      },
+      "ringPixels": 5189,
+      "ringMeanRgb": [
+        182,
+        142,
+        101
+      ],
+      "ringHue": {
+        "h": 30,
+        "c": 0.45
+      },
+      "corona": {
+        "r100_140": 105.1,
+        "r140_200": 63.2,
+        "r200_280": 42,
+        "r280_400": 28.5
+      },
+      "rmseToReference": 17.37
+    },
+    {
+      "name": "agx-umbra-6",
+      "q": "tier=Umbra&curve=agx&levels=6",
+      "gpuP50": 2.48,
+      "gpuPost": 1.11,
+      "discMaxChannel": 1,
+      "seam": {
+        "rail": [
+          6,
+          5,
+          4
+        ],
+        "canvas": [
+          0.9,
+          0.6,
+          0.5
+        ]
+      },
+      "ringPixels": 5042,
+      "ringMeanRgb": [
+        175,
+        137,
+        104
+      ],
+      "ringHue": {
+        "h": 28,
+        "c": 0.41
+      },
+      "corona": {
+        "r100_140": 114,
+        "r140_200": 66.5,
+        "r200_280": 37.9,
+        "r280_400": 22.3
+      },
+      "rmseToReference": 19.19
+    },
+    {
+      "name": "finish-penumbra-4",
+      "q": "tier=Penumbra&curve=finish&levels=4",
+      "gpuP50": 1.01,
+      "gpuPost": 0.52,
+      "discMaxChannel": 2,
+      "seam": {
+        "rail": [
+          6,
+          5,
+          4
+        ],
+        "canvas": [
+          6.3,
+          5.2,
+          4.1
+        ]
+      },
+      "ringPixels": 5781,
+      "ringMeanRgb": [
+        181,
+        140,
+        99
+      ],
+      "ringHue": {
+        "h": 30,
+        "c": 0.45
+      },
+      "corona": {
+        "r100_140": 108.4,
+        "r140_200": 60.8,
+        "r200_280": 41.8,
+        "r280_400": 29.8
+      },
+      "rmseToReference": 18.09
+    },
+    {
+      "name": "finish-penumbra-6",
+      "q": "tier=Penumbra&curve=finish&levels=6",
+      "gpuP50": 2.25,
+      "gpuPost": 0.66,
+      "discMaxChannel": 2,
+      "seam": {
+        "rail": [
+          6,
+          5,
+          4
+        ],
+        "canvas": [
+          6.3,
+          5.2,
+          4.2
+        ]
+      },
+      "ringPixels": 5715,
+      "ringMeanRgb": [
+        182,
+        141,
+        100
+      ],
+      "ringHue": {
+        "h": 30,
+        "c": 0.45
+      },
+      "corona": {
+        "r100_140": 106.9,
+        "r140_200": 65.3,
+        "r200_280": 45.1,
+        "r280_400": 30.7
+      },
+      "rmseToReference": 17.96
+    },
+    {
+      "name": "agx-penumbra-4",
+      "q": "tier=Penumbra&curve=agx&levels=4",
+      "gpuP50": 1.11,
+      "gpuPost": 0.62,
+      "discMaxChannel": 1,
+      "seam": {
+        "rail": [
+          6,
+          5,
+          4
+        ],
+        "canvas": [
+          0.9,
+          0.6,
+          0.5
+        ]
+      },
+      "ringPixels": 5753,
+      "ringMeanRgb": [
+        175,
+        136,
+        103
+      ],
+      "ringHue": {
+        "h": 28,
+        "c": 0.41
+      },
+      "corona": {
+        "r100_140": 117,
+        "r140_200": 63.1,
+        "r200_280": 37.9,
+        "r280_400": 24
+      },
+      "rmseToReference": 20.1
+    },
+    {
+      "name": "finish-corona-5",
+      "q": "tier=Corona&curve=finish&levels=5",
+      "gpuP50": 2.23,
+      "gpuPost": 0.78,
+      "discMaxChannel": 2,
+      "seam": {
+        "rail": [
+          6,
+          5,
+          4
+        ],
+        "canvas": [
+          6.3,
+          5.2,
+          4.2
+        ]
+      },
+      "ringPixels": 5356,
+      "ringMeanRgb": [
+        182,
+        141,
+        100
+      ],
+      "ringHue": {
+        "h": 30,
+        "c": 0.45
+      },
+      "corona": {
+        "r100_140": 106.9,
+        "r140_200": 62.8,
+        "r200_280": 41.3,
+        "r280_400": 29.2
+      },
+      "rmseToReference": 17.59
+    },
+    {
+      "name": "poster-idle",
+      "q": "scene=S0&tier=Umbra",
+      "discMaxChannel": 2,
+      "seam": {
+        "rail": [
+          6,
+          5,
+          4
+        ],
+        "canvas": [
+          6.3,
+          5.2,
+          4.2
+        ]
+      },
+      "ringPixels": 820,
+      "ringMeanRgb": [
+        158,
+        130,
+        92
+      ],
+      "ringHue": {
+        "h": 35,
+        "c": 0.42
+      },
+      "corona": {
+        "r100_140": 103.5,
+        "r140_200": 55.4,
+        "r200_280": 33.8,
+        "r280_400": 20.2
+      },
+      "rmseToReference": 15.96
+    },
+    {
+      "name": "poster-wave",
+      "q": "scene=LOOK&tier=Umbra&wave=300",
+      "discMaxChannel": 2,
+      "seam": {
+        "rail": [
+          6,
+          5,
+          4
+        ],
+        "canvas": [
+          6.3,
+          5.2,
+          4.2
+        ]
+      },
+      "ringPixels": 5188,
+      "ringMeanRgb": [
+        182,
+        142,
+        101
+      ],
+      "ringHue": {
+        "h": 30,
+        "c": 0.45
+      },
+      "corona": {
+        "r100_140": 105.1,
+        "r140_200": 63.3,
+        "r200_280": 42.2,
+        "r280_400": 29.5
+      },
+      "rmseToReference": 16.58
+    },
+    {
+      "name": "poster-salvo",
+      "q": "scene=LOOK&tier=Umbra&salvo=1",
+      "discMaxChannel": 2,
+      "seam": {
+        "rail": [
+          6,
+          5,
+          4
+        ],
+        "canvas": [
+          6.3,
+          5.2,
+          4.2
+        ]
+      },
+      "ringPixels": 5187,
+      "ringMeanRgb": [
+        182,
+        142,
+        101
+      ],
+      "ringHue": {
+        "h": 30,
+        "c": 0.45
+      },
+      "corona": {
+        "r100_140": 106.7,
+        "r140_200": 65.1,
+        "r200_280": 43,
+        "r280_400": 29.2
+      },
+      "rmseToReference": 16.74
+    }
+  ],
+  "auto": {
+    "name": "Penumbra",
+    "log": [],
+    "size": {
+      "width": 785,
+      "height": 755,
+      "dpr": 1.0499999999999998,
+      "cssW": 748,
+      "cssH": 720
+    }
+  },
+  "loss": {
+    "log": [
+      {
+        "event": "plate-up",
+        "at": 2723.9000000059605,
+        "plateMs": 7.700000002980232
+      },
+      {
+        "event": "restored",
+        "at": 2899.2000000029802
+      },
+      {
+        "event": "plate-up",
+        "at": 3848.5,
+        "plateMs": 16.299999997019768
+      },
+      {
+        "event": "restored",
+        "at": 4006.1000000089407
+      }
+    ],
+    "first": {
+      "dom": {
+        "same": true,
+        "text": true
+      },
+      "restoreMs": 7
+    },
+    "second": {
+      "dom": {
+        "same": true,
+        "text": true
+      },
+      "restoreMs": 34
+    },
+    "stayedOnPlateAfterSecond": true,
+    "framesBefore": 47,
+    "framesAfter": 51,
+    "restoredVsBefore": {
+      "maxChannelDelta": 0,
+      "meanChannelDelta": 0,
+      "channelsOver8": 0
+    },
+    "secondRestoredVsBefore": {
+      "maxChannelDelta": 0,
+      "meanChannelDelta": 0,
+      "channelsOver8": 0
+    },
+    "plateVsBefore": {
+      "maxChannelDelta": 250,
+      "meanChannelDelta": 37.629,
+      "channelsOver8": 3244962
+    }
+  },
+  "problems": [],
+  "defaultTier": "Penumbra",
+  "passes": {
+    "S0": {
+      "want": "zero frames at rest",
+      "got": 0,
+      "pass": true
+    },
+    "S20": {
+      "want": "rAF p95 under 33.3 ms at Umbra",
+      "raf": 33.4,
+      "gpu": 4.15,
+      "pass": true
+    },
+    "S20e": {
+      "want": "rAF p95 under 16.7 ms at Corona",
+      "gpu": null,
+      "pass": false
+    },
+    "S60": {
+      "want": "rAF p95 under 33.3 ms at Corona",
+      "gpu": null,
+      "pass": false
+    },
+    "LOOK": {
+      "want": "sodium ring and black disc survive at Penumbra, 4 bloom levels",
+      "got": {
+        "finish-umbra-6": true,
+        "agx-umbra-6": true,
+        "finish-penumbra-4": true,
+        "finish-penumbra-6": true,
+        "agx-penumbra-4": true,
+        "finish-corona-5": true
+      },
+      "pass": true
+    },
+    "LOSS": {
+      "want": "Plate in under 1 s, DOM untouched, restore rebuilds, stays on the Plate after the second loss",
+      "plateMs": [
+        8,
+        16
+      ],
+      "pass": true
+    }
+  },
+  "clean": true
+}

@@ -1,0 +1,9 @@
+# Night terrain
+
+`night-terrain.png` is an original background generated with the built-in Imagegen tool on 2026-11-04. No model API key or fallback CLI was used. All labels, locations and widgets are rendered by the application, independently of this image.
+
+The texture is clipped to a continent whose coastline comes from the selected project's seed. Folder territories use a Voronoi partition and the actual project survey; the inspector contains only that project's file counts, languages and agents. Surface and Relief share the same geography. Texture details and territorial areas are illustrative and imply no code dependencies. The application draws no schematic routes between project folders. This redesign reuses the existing asset and makes no additional image generation calls.
+
+Prompt:
+
+Use case: stylized-concept. Asset type: background texture for an interactive project world map in a desktop app, landscape 3:2. Create a beautiful original top-down fantasy exploration map, like a premium dark tactical game world map. Continuous terrain, deep desaturated midnight teal and pine-green forests in clusters, fine hand-etched contour lines, pale thin winding trails, winding dark river through the middle flowing toward a lake on the lower left, mountains to the upper right, tiny scattered ruins and clearings, subtle painterly paper grain and moonlit fog. Rich layered detailed ground texture, readable geography, understated and elegant, luminous faded sage outlines on nearly black forest terrain. Flat overhead view, edge-to-edge map extends beyond all edges, consistent scale across image. Keep central and upper-left areas reasonably open for interactive labels which app will render. Absolutely no text, letters, numbers, labels, compass, frames, interface, pins, icons or markers. Muted low contrast terrain must remain behind bright app controls; no large bright areas or perspective sky. Reference is mood only, original geography.

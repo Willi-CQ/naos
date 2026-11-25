@@ -1,0 +1,10 @@
+{
+  "name": "NAOS",
+  "short_name": "NAOS",
+  "description": "Every Claude on this machine as a craft in a living solar system.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#060504",
+  "theme_color": "#060504",
+  "icons": [{ "src": "/icon-512.png", "sizes": "512x512", "type": "image/png" }]
+}

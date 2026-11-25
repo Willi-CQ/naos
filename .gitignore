@@ -1,0 +1,25 @@
+node_modules/
+dist/
+*.tsbuildinfo
+*.log
+
+# Kernel data: tokens, database, audit log, layout. Never commit.
+.naos/
+
+# Agent worktrees and local settings
+.claude/worktrees/
+.claude/settings.local.json
+
+# Formatter and tool caches
+.ruff_cache/
+
+# Throwaway verification output
+.shots/
+
+# Secrets, wherever they show up
+.env
+.env.*
+*.pem
+*.key
+*.p12
+*.pfx

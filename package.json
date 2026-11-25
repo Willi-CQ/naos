@@ -1,0 +1,37 @@
+{
+  "name": "naos",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "NAOS, a native agent OS: Claude Code, Codex and Cursor sessions as craft in a living solar system.",
+  "engines": { "node": ">=24.14.0" },
+  "workspaces": ["packages/*"],
+  "scripts": {
+    "naos": "node --disable-warning=ExperimentalWarning packages/kernel/src/cli.ts",
+    "app": "node --disable-warning=ExperimentalWarning packages/kernel/src/cli.ts open",
+    "shortcut": "node --disable-warning=ExperimentalWarning packages/kernel/src/cli.ts shortcut",
+    "up": "node --disable-warning=ExperimentalWarning packages/kernel/src/cli.ts up",
+    "fixture": "node --disable-warning=ExperimentalWarning packages/kernel/src/cli.ts fixture",
+    "dev:ui": "npm run dev -w @naos/ui",
+    "build": "npm run build -w @naos/ui",
+    "typecheck": "tsc --noEmit -p packages/protocol && tsc --noEmit -p packages/kernel && tsc --noEmit -p packages/ui",
+    "test": "node --disable-warning=ExperimentalWarning --test \"packages/*/test/**/*.test.ts\"",
+    "shot": "node scripts/shot.mjs",
+    "bench": "node scripts/bench.mjs",
+    "e2e:app": "node scripts/e2e-app.mjs",
+    "e2e:hand": "node scripts/e2e-hand.mjs",
+    "e2e:instrument": "node scripts/e2e-instrument.mjs",
+    "e2e:scene": "node scripts/e2e-scene.mjs",
+    "e2e:fleet": "node scripts/e2e-fleet.mjs",
+    "e2e:clients": "node scripts/e2e-clients.mjs",
+    "e2e:lifecycle": "node scripts/e2e-lifecycle.mjs",
+    "e2e:demo": "node scripts/e2e-demo.mjs",
+    "e2e:observatory": "node scripts/e2e-observatory.mjs",
+    "e2e:project": "node scripts/e2e-project.mjs"
+  },
+  "devDependencies": {
+    "@types/node": "24.10.1",
+    "playwright-core": "1.64.1",
+    "typescript": "6.0.3"
+  }
+}

@@ -1,0 +1,31 @@
+import { useEffect, useMemo, useRef, useState } from 'react';
+import type { KnowledgeGraph, ProjectSurvey } from '@naos/protocol';
+import { folderColor, graphPositions, structureGraph } from '../../core/projectGraph.ts';
+import { command } from '../../store/commands.ts';
+
+export function GraphWidget({ worldId, survey, kind, useContext }: { worldId: string; survey: ProjectSurvey | null; kind: 'brain' | 'structure'; useContext(path: string): void }) {
+  const [graph, setGraph] = useState<KnowledgeGraph | null>(null), [failure, setFailure] = useState(''), [retry, setRetry] = useState(0);
+  const [selected, select] = useState<string | null>(null), [search, setSearch] = useState(''), [zoom, setZoom] = useState(1), [pan, setPan] = useState({ x: 0, y: 0 });
+  const dragging = useRef<{ x: number; y: number; px: number; py: number } | null>(null);
+  useEffect(() => {
+    setGraph(null); setFailure(''); select(null); setSearch('');
+    if (kind === 'structure') { if (survey) setGraph(structureGraph(survey)); return; }
+    let active = true;
+    void command('world.knowledge', { worldId }).then((res) => { if (!active) return; if (res.ok) setGraph(res.result); else setFailure(res.error.message === 'unknown command' ? 'The local kernel needs to be restarted to load the knowledge reader.' : res.error.message); });
+    return () => { active = false; };
+  }, [worldId, kind, survey, retry]);
+  const positions = useMemo(() => graphPositions(graph ?? { nodes: [], edges: [], complete: true }), [graph]);
+  const neighbors = useMemo(() => new Set(graph?.edges.flatMap((e) => e.from === selected ? [e.to] : e.to === selected ? [e.from] : []) ?? []), [graph, selected]);
+  const current = graph?.nodes.find((n) => n.id === selected);
+  const matches = graph?.nodes.filter((n) => `${n.title} ${n.id}`.toLowerCase().includes(search.toLowerCase())) ?? [];
+  if (!graph) return <div className="widget-empty" role="status"><span>⌘</span><h3>{failure ? 'Connection needed' : 'Following the connections…'}</h3><p>{failure || 'Reading the project’s document links.'}</p>{failure ? <button type="button" onClick={() => setRetry((n) => n + 1)}>Try again ↻</button> : null}</div>;
+  if (!graph.nodes.length) return <div className="widget-empty"><span>⌘</span><h3>A place for your knowledge.</h3><p>Add Markdown notes to brain, knowledge, memory, notes or docs. Wiki links and Markdown links become connections here.</p></div>;
+  return <div className="knowledge-widget"><div className="knowledge-toolbar"><label><span>⌕</span><input aria-label="Search graph nodes" value={search} placeholder="Find a thought or a file…" onChange={(e) => setSearch(e.target.value)} /></label><span>{graph.nodes.length} nodes · {graph.edges.length} {kind === 'brain' ? 'links' : 'branches'}{graph.complete ? '' : ' · partial'}</span></div>
+    <div className="knowledge-body"><div className="knowledge-canvas"><svg role="group" aria-label={kind === 'brain' ? 'Brain knowledge graph' : 'Project structure graph'} viewBox={`${400 - 400 / zoom - pan.x} ${235 - 235 / zoom - pan.y} ${800 / zoom} ${470 / zoom}`} onPointerDown={(e) => { if ((e.target as Element).closest('[data-graph-node]')) return; dragging.current = { x: e.clientX, y: e.clientY, px: pan.x, py: pan.y }; e.currentTarget.setPointerCapture(e.pointerId); }} onPointerMove={(e) => { const d = dragging.current; if (!d) return; const k = 800 / e.currentTarget.getBoundingClientRect().width / zoom; setPan({ x: Math.max(-600, Math.min(600, d.px + (e.clientX - d.x) * k)), y: Math.max(-400, Math.min(400, d.py + (e.clientY - d.y) * k)) }); }} onPointerUp={() => { dragging.current = null; }} onPointerCancel={() => { dragging.current = null; }}>
+      {graph.edges.map((e, i) => { const a = positions.get(e.from), b = positions.get(e.to); return a && b ? <line key={i} x1={a.x} y1={a.y} x2={b.x} y2={b.y} className="knowledge-edge" data-lit={e.from === selected || e.to === selected} strokeDasharray={e.kind === 'folder' ? '3 4' : undefined} /> : null; })}
+      {graph.nodes.map((n) => { const p = positions.get(n.id)!; const match = !search || matches.includes(n); return <g key={n.id} transform={`translate(${p.x} ${p.y})`} data-graph-node={n.id} className="knowledge-node" data-selected={n.id === selected} style={{ color: folderColor(n.folder), opacity: !match ? .16 : selected && selected !== n.id && !neighbors.has(n.id) ? .35 : 1 }} role="button" tabIndex={match ? 0 : -1} aria-label={n.title} aria-pressed={n.id === selected} onClick={() => select(selected === n.id ? null : n.id)} onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); select(n.id); } }}><circle r="15" className="knowledge-node-halo"/><circle r={n.id === selected ? 6 : 4} className="knowledge-node-point"/><text y="25">{n.title.length > 25 ? n.title.slice(0, 23) + '…' : n.title}</text></g>; })}
+    </svg><div className="knowledge-zoom"><button type="button" aria-label="Zoom graph out" disabled={zoom <= .6} onClick={() => setZoom(Math.max(.6, zoom - .2))}>−</button><button type="button" aria-label="Reset graph view" onClick={() => { setZoom(1); setPan({ x: 0, y: 0 }); }}>{Math.round(zoom * 100)}%</button><button type="button" aria-label="Zoom graph in" disabled={zoom >= 3} onClick={() => setZoom(Math.min(3, zoom + .2))}>+</button></div></div>
+    <aside className="knowledge-inspector" aria-label="Graph node details">{current ? <><span className="project-kicker">SELECTED {kind === 'brain' ? 'THOUGHT' : 'FILE'}</span><h4>{current.title}</h4><code>{current.id}</code><p>{neighbors.size} direct connections</p><button type="button" className="project-secondary" onClick={() => useContext(current.id.startsWith('folder:') ? current.folder : current.id)}>Discuss with agent ↗</button></> : <><span className="project-kicker">{kind === 'brain' ? 'CONNECTED KNOWLEDGE' : 'PROJECT ANATOMY'}</span><h4>{kind === 'brain' ? 'Follow a thought.' : 'See how it fits.'}</h4><p>{kind === 'brain' ? 'Connections come from actual wiki and Markdown links in your notes.' : 'Folders and sampled files from the project survey. Lines show containment.'}</p></>}
+    <div className="knowledge-node-list">{matches.map((n) => <button type="button" key={n.id} aria-pressed={selected === n.id} onClick={() => select(n.id)}><i style={{ background: folderColor(n.folder) }}/>{n.title}</button>)}</div></aside></div>
+  </div>;
+}

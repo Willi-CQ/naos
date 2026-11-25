@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>NAOS planet lab</title>
+    <link rel="icon" href="data:," />
+    <style>
+      html, body, #root { margin: 0; height: 100%; background: #060504; overflow: hidden; }
+      canvas { position: absolute; inset: 0; display: block; }
+      .cap { position: absolute; transform: translateX(-50%); text-align: center; color: #cfc8bc; font: 11px/1.45 "Segoe UI", system-ui, sans-serif; letter-spacing: 0.04em; pointer-events: none; }
+      .cap b { display: block; font-weight: 500; color: #ece6da; }
+      .cap span { color: #8a8378; }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/scene/planet/lab.ts"></script>
+  </body>
+</html>
